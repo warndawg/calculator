@@ -5,13 +5,40 @@
 	<link rel="stylesheet" type="text/css" href="Calculator.css">
 </head>
 <body>
-<div>
-	<button onclick="message(1)">Button 1</button>
-	<button onclick="message(2)">Button 2</button>
-	<button onclick="message(3)">Do not click this button</button>
-</div>
-<div id="result">
-	
+<div id ="outer">
+	<div>
+		<form>
+			<input disabled id="result" type="text" name="result">
+			<button type="reset" id="clear">Clr</button><br>
+		</form>	
+		<select id="previousHis"></select>				
+		<button onclick="copyHis()">Paste</button>
+		<button onclick="clearHis()">ClrHis</button>
+	</div>
+	<div>
+		<button onclick="input(7)">7</button>
+		<button onclick="input(8)">8</button>
+		<button onclick="input(9)">9</button>
+		<button onclick="input('/')">/</button>
+	</div>
+	<div>
+		<button onclick="input(4)">4</button>
+		<button onclick="input(5)">5</button>
+		<button onclick="input(6)">6</button>
+		<button onclick="input('*')">X</button>
+	</div>
+	<div>
+		<button onclick="input(1)">1</button>
+		<button onclick="input(2)">2</button>
+		<button onclick="input(3)">3</button>
+		<button onclick="input('-')">-</button>
+	</div>
+	<div>
+		<button onclick="input(0)">0</button>
+		<button onclick="input('&period;')">.</button>
+		<button onclick="answer('=')">=</button>
+		<button onclick="input('+')">+</button>
+	</div>
 </div>
 <script type="text/javascript" src="Calculator.js"></script>
 </body>
