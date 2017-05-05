@@ -1,10 +1,10 @@
 var previous = [];
+var canOperator = false;
 
 function input(input){
-	document.getElementById('result').value += input;
+	isOperator(input);
+		
 	previous.push(document.getElementById('result').value);
-	checkDec();
-	 multiDivStart(input);
 }
 
 function answer(input){
@@ -36,7 +36,7 @@ function clearHis(){
 	location.reload();
 }
 
-function checkDec(){
+/*function checkDec(){
 	var check = document.getElementById('result').value;
 	var lstTwo = check.substring(check.length - 2, check.length)
 	if (lstTwo === '..'){
@@ -48,11 +48,36 @@ function checkDec(){
 		var doubleNeg = document.getElementById('result').value;
 		document.getElementById('result').value = doubleNeg.replace(lstTwo, '+');
 	}
+}*/
+
+function isOperator(char){
+	return ['/','*','+','-'].includes(char);
 }
 
-function multiDivStart(input){
-	var check = document.getElementById('result').value;
-	if (check === '*' || check === '/'){
-		document.getElementById('result').value = check.replace(input, '1'+input);
-	}
+function isDec(char){
+	return char === '.';
 }
+
+function addNum(char){
+	document.getElementById('result').value += char;
+	canOperator = true;
+	printVal();
+}
+
+function addOperator(char){
+	document.getElementById('result').value += char;
+	canOperator = false;
+	printVal();
+}
+
+function addDec(){
+
+}
+
+//input
+//-isOperator
+	//-canOperator?
+
+//-isDecimal
+	//-canDecimal?
+///
